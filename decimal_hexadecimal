@@ -1,0 +1,23 @@
+def decimal_hexadecimal(num):
+    num_inicial=num
+    i=1
+    dicc_hexa={10:"A",11:"B",12:"C",13:"D",14:"E",15:"F"}
+    hexa=[]
+    hexa_final=[]
+    while i<=num:
+        hexa.append(num%16)
+        num=num//16
+    for i in hexa:
+        if i in dicc_hexa:
+            hexa_final.insert(hexa.index(i),dicc_hexa[i])
+        else:
+            hexa_final.append(i)
+    hexa_final_tex=""
+    for i in hexa_final:
+        hexa_final_tex+=str(i)
+    print("El numero {} en hexadecimal es {}".format(num_inicial,hexa_final_tex[::-1]))
+        
+        
+decimal_hexadecimal(6898)
+decimal_hexadecimal(1735)
+decimal_hexadecimal(987)
